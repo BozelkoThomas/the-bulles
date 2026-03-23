@@ -1,0 +1,1070 @@
+:root {
+    --color-primary: #2A9D8F;
+    --color-secondary: #E9C46A;
+    --color-accent: #F4A261;
+    --color-bg-dark: #264653;
+    --color-white: #FFF;
+    --color-black: #000;
+    --color-bg-light: #EBEFF0;
+
+    --space-1: 4px;
+    --space-2: 10px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 40px;
+    --space-7: 60px;
+    --space-8: 170px;
+
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-md: 20px;
+    --font-size-lg: 24px;
+    --font-size-xl: 40px;
+    --font-size-xxl: 72px;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+
+    --line-height-1: 20px;
+    --line-height-2: 22px;
+    --line-height-3: 24px;
+    --line-height-4: 28px;
+    --line-height-5: 32px;
+    --line-height-6: 36px;
+    --line-height-7: 48px;
+
+    --radius-1: 4px;
+    --radius-2: 6px;
+    --radius-3: 8px;
+    --radius-4: 9px;
+
+    --border-1: 1px;
+    --border-2: 2px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--color-bg-dark);
+    font-family: Poppins;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    min-width: 800px;
+}
+
+h1 {
+    font-family: Ranchers;
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-7);
+
+    & span {
+        color: var(--color-primary);
+    }
+}
+
+h2 {
+    font-family: Ranchers;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-7);
+}
+
+h3 {
+    color: var(--color-accent);
+    font-family: Ranchers;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-5);
+}
+
+footer {
+    overflow: hidden;
+}
+
+/**
+ * Section - Structure des différentes sections
+ *
+ * Utilisation :
+ * <section class="section">...</section>
+ *
+ * Variantes :
+ * .section--row : Layout horizontal
+ * .section--hero : Section principale avec image de fond
+ * .section--bg-dark : Fond sombre
+ * .section--bg-light : Fond clair
+ * .section--members : Section "members" avec bordure
+ * .section--contact-us : Section "contact-us" avec bordure et espacement spécifique
+ */
+
+.section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: clamp(20px, 6vw, 60px) clamp(20px, 8vw, 170px);
+    gap: var(--space-7);
+}
+
+.section--row {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.section--hero {
+    background-image: url(./assets/img/img_hero_bg-bubble.png);
+    background-size: cover;
+    flex-direction: row;
+    height: auto;
+    min-height: 729px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.section--bg-dark {
+    background: var(--color-bg-dark);
+}
+
+.section--bg-light {
+    background: var(--color-bg-light);
+}
+
+.section--members {
+    border-top: var(--border-1) solid var(--color-bg-light);
+    text-align: center;
+}
+
+.section--contact-us {
+    border-top: var(--border-1) solid var(--color-bg-dark);
+    gap: var(--space-6);
+}
+
+/**
+ * Content - Bloc de contenu textuel centré
+ *
+ * Utilisation :
+ * <div class="content">
+ *   <h2>...</h2>
+ *   <p>...</p>
+ * </div>
+ *
+ * Variantes :
+ * .content--hero : Alignement et style spécifique pour la section "hero"
+ * .content--color-white : Texte en blanc
+ * .content--reviews : Alignement à gauche pour la section "reviews"
+ * .content--our-team : Alignement et gap spécifique pour la section "our-team"
+ * .content--join-us : Style spécifique pour la section "join-us"
+ */
+
+.content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-5);
+
+    & p {
+        line-height: var(--line-height-3);
+        width: 100%;
+        max-width: 520px;
+    }
+}
+
+.content--hero {
+    align-items: flex-start;
+    flex: 1;
+
+    & p {
+        font-size: 19px;
+        font-weight: var(--font-weight-black);
+        text-align: left;
+    }
+}
+
+.content--color-white {
+    color: var(--color-white);
+}
+
+.content--reviews {
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.content--our-team {
+    justify-content: center;
+    align-items: flex-start;
+    text-align: start;
+    gap: var(--space-4);
+    flex: 1;
+}
+
+.content--join-us {
+    & h2 {
+        color: var(--color-accent);
+    }
+}
+
+/**
+ * Row - Conteneur horizontal pour organiser des blocs
+ *
+ * Utilisation :
+ * <div class="row">
+ *   <div>...</div>
+ *   <div>...</div>
+ * </div>
+ *
+ * Variantes :
+ * .row--reviews : Tailles et espaces spécifiques pour la section "reviews"
+ * .row--join-us : Largeur maximale pour la section "join-us"
+ * .row--our-team : Alignement spécifique pour la section "our-team"
+ * .row--contact-us : Largeur maximale pour la section "contact-us"
+ * .row--footer : Tailles et espaces spécifiques pour le footer
+ */
+
+.row {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    gap: var(--space-6);
+}
+
+.row--reviews {
+    padding: 20px 0;
+    flex: 1;
+}
+
+.row--join-us {
+    max-width: 800px;
+    align-items: center;
+}
+
+.row--our-team {
+    align-items: center;
+}
+
+.row--contact-us {
+    max-width: 1100px;
+}
+
+.row--footer {
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+}
+
+/**
+ * Button (btn) - Bouton de base du site
+ *
+ * Utilisation :
+ * <button class="btn">...</button>
+ *
+ * Variantes :
+ * .btn--header : Bouton compact pour le header
+ * .btn--primary : Bouton de la couleur primaire
+ * .btn--secondary : Bouton de la couleur secondaire
+ * .btn--outline : Bouton avec contour
+ */
+
+.btn {
+    border-radius: var(--radius-3);
+    background: var(--color-accent);
+    color: var(--color-bg-dark);
+    font-family: Poppins;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    border-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    min-width: 210px;
+    height: 48px;
+    padding: var(--space-3);
+}
+
+.btn--header {
+    border-radius: var(--radius-1);
+    font-size: var(--font-size-base);
+    width: auto;
+    min-width: 0;
+    padding: var(--space-2) var(--space-4);
+}
+
+.btn--primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn--secondary {
+    background: var(--color-secondary);
+}
+
+.btn--outline {
+    background: transparent;
+    border: var(--border-1) solid var(--color-bg-dark);
+}
+
+/**
+ * Buttons - Conteneur de boutons
+ *
+ * Utilisation :
+ * <div class="buttons">
+ *   <button class="btn">...</button>
+ *   <button class="btn">...</button>
+ * </div>
+
+ * Variante :
+ * .buttons--hero : Alignement spécifique pour la section "hero"
+ */
+
+.buttons {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    justify-content: center;
+    width: 100%;
+}
+
+.buttons--hero {
+    justify-content: flex-start;
+}
+
+/**
+ * Header - En-tête principal du site
+ *
+ * Utilisation :
+ * <header class="header">
+ *   <div class="header__brand">
+ *     <div class="header__logo">...</div>
+ *     <div class="header__title">...</div>
+ *   </div>
+ *   <nav class="header__nav">
+ *     <a class="header__link">...</a>
+ *   </nav>
+ * </header>
+ *
+ * Éléments :
+ * header__brand : Conteneur du logo et du titre
+ * header__logo : Logo
+ * header__title : Nom du site / entrepise
+ * header__nav : Barre de navigation
+ * header__link : Lien de navigation
+ */
+
+.header {
+    background: var(--color-bg-dark);
+    display: flex;
+    height: 80px;
+    padding: var(--space-2) var(--space-7);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__brand {
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+}
+
+.header__logo {
+    width: 46px;
+    height: 46px;
+}
+
+.header__title {
+    color: var(--color-accent);
+    font-family: Ranchers;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-2);
+}
+
+.header__nav {
+    display: flex;
+    padding: 2px var(--space-5);
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-5);
+    flex: 1;
+    overflow: hidden;
+}
+
+.header__link {
+    color: var(--color-white);
+    line-height: var(--line-height-2);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/**
+ * Hero Image - Image principale de la section "hero"
+ *
+ * Utilisation :
+ * <div class="hero__image"></div>
+ */
+
+.hero__image {
+    background-image: url(./assets/img/img_hero_drink.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 31px;
+    border: 5px solid var(--color-accent);
+    display: flex;
+    height: 400px;
+    min-width: 450px;
+    align-items: flex-start;
+    flex: 1;
+}
+
+/**
+ * About List - Conteneur vertical des cartes "about"
+ *
+ * Utilisation :
+ * <div class="about__list">
+ *   <div class="row">
+ *     <div class="about-card">...</div>
+ *     <div class="about-card">...</div>
+ *   </div>
+ *   <div class="row">
+ *     <div class="about-card">...</div>
+ *   </div>
+ * </div>
+ */
+
+.about__list {
+    display: flex;
+    padding: 20px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+/**
+ * About Card - Carte d’information de la section "about"
+ *
+ * Utilisation :
+ * <div class="about-card">
+ *   <div class="about-card__icon">...</div>
+ *   <div class="about-card__content">
+ *     <p class="about-card__title">...</p>
+ *     <p class="about-card__description">...</p>
+ *     <div class="about-card__tag">
+ *       <div class="about-card__tag-icon"></div>
+ *       <p class="about-card__tag-text">...</p>
+ *     </div>
+ *   </div>
+ * </div>
+ *
+ * Éléments :
+ * about-card__icon : Icône principale
+ * about-card__content : Contenu textuel
+ * about-card__title : Titre de la carte
+ * about-card__description : Description
+ * about-card__tag : Conteneur du tag
+ * about-card__tag-icon : Icône du tag
+ * about-card__tag-text : Texte du tag
+ */
+
+.about-card {
+    border-radius: var(--radius-4);
+    border: var(--border-1) solid var(--color-bg-light);
+    background: var(--color-bg-light);
+    display: flex;
+    padding: var(--space-4);
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--space-4);
+    flex: 1;
+}
+
+.about-card__icon {
+    border-radius: var(--radius-2);
+    background: var(--color-primary);
+    display: flex;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1;
+}
+
+.about-card__title {
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-4);
+}
+
+.about-card__description {
+    line-height: var(--line-height-3);
+}
+
+.about-card__tag {
+    display: flex;
+    padding: var(--space-1) 0;
+    align-items: center;
+    gap: 8px;
+}
+
+.about-card__tag-icon {
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.10);
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.about-card__tag-text {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-1);
+}
+
+/**
+ * Product Card - Carte de présentation d’un produit
+ *
+ * Utilisation :
+ * <div class="product-card">
+ *   <div class="product-card__image-container">
+ *     <div class="product-card__badge">...</div>
+ *     <p class="product-card__image-title">...</p>
+ *   </div>
+ *   <div class="product-card__content">
+ *     <p class="product-card__title">...</p>
+ *     <p class="product-card__description">...</p>
+ *   </div>
+ * </div>
+ *
+ * Éléments :
+ * product-card__image-container : Conteneur de l’image
+ * product-card__badge : Badge
+ * product-card__image-title : Texte sur l’image
+ * product-card__content : Contenu textuel
+ * product-card__title : Nom du produit
+ * product-card__description : Description
+ *
+ * Variantes :
+ * .product-card--featured : Produit mis en avant (populaire)
+ * .product-card__badge--featured : Badge mis en avant (populaire)
+ */
+
+.product-card {
+    border-radius: var(--radius-2);
+    border: 1px solid var(--color-bg-light);
+    display: flex;
+    height: 460px;
+    flex-direction: column;
+    width: 30%;
+}
+
+.product-card--featured {
+    width: 40%;
+    height: 480px;
+    border: var(--color-accent) solid var(--border-2);
+}
+
+.product-card__image-container {
+    background: var(--color-bg-light);
+    border-radius: var(--radius-2) var(--radius-2) 0 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 340px;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+}
+
+.product-card__badge {
+    border-radius: var(--radius-2) 0 var(--radius-2) 0;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    padding: var(--space-1) 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.product-card__badge--featured {
+    background: var(--color-accent);
+    color: var(--color-bg-dark);
+}
+
+.product-card__image-title {
+    font-size: var(--font-size-xs);
+}
+
+.product-card__content {
+    display: flex;
+    padding: var(--space-3) var(--space-3) var(--space-5) var(--space-3);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+}
+
+.product-card__title {
+    line-height: var(--line-height-3);
+}
+
+.product-card__description {
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-4);
+}
+
+/**
+ * Opening Hours Article - Bloc d’horaires d’ouverture
+ *
+ * Utilisation :
+ * <div class="opening-hours-article">
+ *   <div class="opening-hours-article__icon">...</div>
+ *   <p class="opening-hours-article__title">...</p>
+ *   <p class="opening-hours-article__description">...</p>
+ * </div>
+ *
+ * Éléments :
+ * opening-hours-article__icon : Icône
+ * opening-hours-article__title : Jours de la semaine
+ * opening-hours-article__description : Heures
+ */
+
+.opening-hours-article {
+    display: flex;
+    padding: var(--space-3) 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    flex: 1;
+}
+
+.opening-hours-article__icon {
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.05);
+    font-size: 32px;
+    display: flex;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+}
+
+.opening-hours-article__title {
+    font-size: clamp(20px, 2vw, 24px);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+}
+
+.opening-hours-article__description {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+}
+
+/**
+ * Reviews Card - Carte d’avis client
+ *
+ * Utilisation :
+ * <div class="reviews-card">
+ *   <div class="reviews-card__user">
+ *     <div class="reviews-card__user-icon">...</div>
+ *     <p class="reviews-card__user-name">...</p>
+ *   </div>
+ *   <p class="reviews-card__description">...</p>
+ * </div>
+ *
+ * Éléments :
+ * reviews-card__user : Conteneur d'avis
+ * reviews-card__user-icon : Icône de l'utilisateur
+ * reviews-card__user-name : Nom de l'utilisateur
+ * reviews-card__description : Texte de l’avis
+ */
+
+.reviews-card {
+    border-radius: var(--radius-2);
+    background: var(--color-bg-light);
+    display: flex;
+    padding: var(--space-4);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+    flex: 1;
+}
+
+.reviews-card__user {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.reviews-card__user-icon {
+    border-radius: 32px;
+    background: rgba(0, 0, 0, 0.05);
+    width: 32px;
+    height: 32px;
+    padding: var(--space-1);
+    justify-content: center;
+    align-items: center;
+}
+
+.reviews-card__user-name {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+.reviews-card__description {
+    min-height: 72px;
+    font-size: clamp(1px, 1.5vw, 16px);
+}
+
+/**
+ * Our Team Icon - Icône de la section "our-team"
+ *
+ * Utilisation :
+ * <div class="our-team__icon">...</div>
+ */
+
+.our-team__icon {
+    border-radius: 50px;
+    background: var(--color-accent);
+    display: flex;
+    width: 100px;
+    height: 100px;
+    padding: 13px 14px 14px 13px;
+    justify-content: center;
+    align-items: center;
+}
+
+/**
+ * Member Article - Carte d’un membre de l’équipe
+ *
+ * Utilisation :
+ * <div class="member-article">
+ *   <div class="member-article__icon-container">
+ *     <img class="member-article__icon">
+ *   </div>
+ *   <p class="member-article__title">...</p>
+ *   <p class="member-article__description">...</p>
+ * </div>
+ *
+ * Éléments :
+ * member-article__icon-container : Conteneur de l’icône
+ * member-article__icon : Icône du membre
+ * member-article__title : Nom
+ * member-article__description : Description
+ */
+
+.member-article {
+    display: flex;
+    padding: var(--space-3) 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.member-article__icon {
+    width: 118px;
+    height: 118px;
+    display: block;
+    flex-shrink: 0;
+}
+
+.member-article__icon-container {
+    background: var(--color-secondary);
+    border-radius: 99px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.member-article__title {
+    color: var(--color-secondary);
+    font-size: var(--font-size-md);
+}
+
+.member-article__description {
+    color: rgba(255, 255, 255, 0.50);
+}
+
+/**
+ * Offer Card - Carte d’offre / prix
+ *
+ * Utilisation :
+ * <div class="offer-card">
+ *   <p class="offer-card__title">...</p>
+ *   <p class="offer-card__price">...</p>
+ *   <p class="offer-card__description">...</p>
+ * </div>
+ *
+ * Éléments :
+ * offer-card__title : Offre
+ * offer-card__price : Prix
+ * offer-card__description : Description
+ */
+
+.offer-card {
+    border-radius: var(--radius-2);
+    border: var(--border-1) solid var(--color-bg-light);
+    display: flex;
+    padding: var(--space-4);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+    flex: 1;
+}
+
+.offer-card__title {
+    color: rgba(0, 0, 0, 0.50);
+}
+
+.offer-card__price {
+    color: var(--color-bg-dark);
+    font-size: 28px;
+    font-weight: var(--font-weight-medium);
+}
+
+.offer-card__description {
+    color: var(--color-bg-dark);
+}
+
+/**
+ * Join Us Address - Bloc de contenu textuel sur l'adresse
+ *
+ * Utilisation :
+ * <div class="join-us-address">
+ *   <h3>...</h3>
+ *   <p class="join-us-address__description">...</p>
+ * </div>
+ *
+ * Élément :
+ * join-us-address__description : Adresse
+ */
+
+.join-us-address {
+    display: flex;
+    min-width: 135px;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: var(--space-2);
+    flex: 1;
+}
+
+.join-us-address__description {
+    color: var(--color-bg-dark);
+    font-size: 20px;
+    text-align: left;
+}
+
+/**
+ * Join Us Map - Carte de la localisation
+ *
+ * Utilisation :
+ * <div class="join-us-map">
+ *   <img class="join-us-map__icon">
+ * </div>
+ *
+ * Éléments :
+ * join-us-map__icon : Icône de position
+ */
+
+.join-us-map {
+    background: var(--color-bg-light);
+    border-radius: 8px;
+    border: 1px solid var(--color-bg-dark);
+    width: 404px;
+    height: 293px;
+    background-image: url(./assets/img/img_join-us_map.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.join-us-map__icon {
+    position: absolute;
+    top: 56px;
+    left: 110px;
+    width: 50px;
+    height: 50px;
+}
+
+/**
+ * Contact Us Form - Formulaire de contact
+ *
+ * Utilisation :
+ * <form class="contact-us-form">
+ *   <p class="contact-us-form__label">...</p>
+ *   <div class="contact-us-form__input">...</div>
+ * </form>
+ *
+ * Éléments :
+ * contact-us-form__label : Label
+ * contact-us-form__input : Zone de saisie
+ */
+
+.contact-us-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: var(--space-1);
+    flex: 1;
+    font-size: calc(12px + 0.2vw);
+}
+
+.contact-us-form__label {
+    font-weight: var(--font-weight-medium);
+}
+
+.contact-us-form__input {
+    color: rgba(0, 0, 0, 0.50);
+    border-radius: var(--radius-2);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--color-white);
+    display: flex;
+    padding: 8px var(--space-3);
+    align-items: center;
+    gap: var(--space-1);
+    width: 100%;
+}
+
+/**
+ * Footer Article - Bloc d’information du footer
+ *
+ * Utilisation :
+ * <div class="footer-article">
+ *   <p class="footer-article__title">...</p>
+ *   <p class="footer-article__description">...</p>
+ * </div>
+ *
+ * Éléments :
+ * footer-article__title : Titre
+ * footer-article__description : Description
+ */
+
+.footer-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-1);
+    flex: 1;
+}
+
+.footer-article__title {
+    color: var(--color-white);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    text-align: center;
+}
+
+.footer-article__description {
+    color: var(--color-white);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    text-align: center;
+}
+
+/**
+ * Footer Separator - Séparateur dans le footer
+ *
+ * Utilisation :
+ * <div class="footer__separator">|</div>
+ */
+
+.footer__separator {
+    color: rgba(255, 255, 255, 0.40);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    width: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/**
+ * Footer Location - Bloc sur la localisation
+ *
+ * Utilisation :
+ * <div class="footer-location">
+ *   <p class="footer-location__title">...</p>
+ *   <div class="footer-location__map">
+ *     <img class="footer-location__icon">
+ *   </div>
+ * </div>
+ *
+ * Éléments :
+ * footer-location__title : Titre
+ * footer-location__map : Carte
+ * footer-location__icon : Icône de position
+ */
+
+.footer-location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    align-self: stretch;
+}
+
+.footer-location__title {
+    color: var(--color-white);
+    text-align: center;
+    font-family: Ranchers;
+    font-size: var(--font-size-lg);
+    font-style: normal;
+    font-weight: var(--font-weight-regular);
+}
+
+.footer-location__map {
+    background-image: url(./assets/img/img_footer_map.png);
+    background-size: cover;
+    background-position: center;
+    width: 1320px;
+    height: 520px;
+    aspect-ratio: 137 / 54;
+    position: relative;
+}
+
+.footer-location__icon {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: 128px;
+    left: 538px;
+    object-fit: contain;
+}
